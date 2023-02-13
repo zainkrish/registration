@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+        </div>
+        <form method="post" name="google-sheet">
+          <div class="title">
+            <i class="fas fa-pencil-alt"></i> 
+            <h2>Register here</h2>
+          </div>
+          <div class="info">
+            <input class="fname" type="text" name="name" placeholder="Full name">
+            <input type="text" name="email" placeholder="Email">
+            <input type="text" name="phone" placeholder="Phone number">
+            <input type="password" name="password1" placeholder="Password">
+            <select name="degree">
+              <option value="not selected">Course type*</option>
+              <option value="short-courses">Short courses</option>
+              <option value="featured-courses">Featured courses</option>
+              <option value="undergraduate">Undergraduate</option>
+              <option value="diploma">Diploma</option>
+              <option value="certificate">Certificate</option>
+              <option value="masters-degree">Masters degree</option>
+              <option value="postgraduate">Postgraduate</option>
+            </select>
+          </div>
+          <div class="checkbox">
+            <input type="checkbox" name="checkbox"><span>I agree to the <a href="https://www.w3docs.com/privacy-policy">Privacy Poalicy for W3Docs.</a></span>
+          </div>
+          <button type="reset">Reset</button>
+          <button type="submit" href="/">Submit</button>
+        </form>
+      </div>
+      <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbwf_s3B_rKe2X4TI6YBQKMan8Ngq-tTiYMYLDRxScWkEC_cl3qCnpzDjfggpRVwOU7Y/exec'
+        const form = document.forms['google-sheet']
+      
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => alert("Thanks for Contacting us..! We Will Contact You Soon..."))
+            .catch(error => console.error('Error!', error.message))
+        })
+      </script>
+</body>
+</html>
